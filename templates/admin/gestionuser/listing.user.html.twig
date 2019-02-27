@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>listing</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <th scope="row">{{ user.id }}</th>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.IsActive }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% for user in users %}
+        {{ user.username }}
+        {{ user.email }}
+        {{ user.IsActive }}
+    {% endfor %}
+{% endblock %}

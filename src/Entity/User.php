@@ -20,8 +20,9 @@ class User implements UserInterface, \Serializable {
      */
     private $id;
 
+
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255, unique=true, nullable=false)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
@@ -145,5 +146,6 @@ class User implements UserInterface, \Serializable {
     function setIsActive($isActive) {
         $this->isActive = $isActive;
     }
+
 
 }
