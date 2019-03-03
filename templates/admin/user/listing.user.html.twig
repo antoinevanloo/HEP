@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>listing des utilisateurs</h3>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actif</th>
+            <th colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            {% if(user.IsActive == false) %}
+                <tr class="table-info">
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>0</td>
+                <td><a href="{{ path('app_admin_user_showone', {'id' : user.id}) }}">editer</a></td>
+                <td><a href="#" >supprimer</a></td>
+            {% else %}
+                <tr>
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.isActive }}</td>
+                    <td><a href="{{ path('app_admin_user_showone', {'id' : user.id}) }}">editer</a></td>
+                    <td><a href="#" >supprimer</a></td>
+            {% endif %}
+
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

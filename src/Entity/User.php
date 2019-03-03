@@ -20,6 +20,16 @@ class User implements UserInterface, \Serializable {
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="string", length=100, unique=false, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=100, unique=false, nullable=false)
+     */
+    private $prenom;
+
 
     /**
      * @ORM\Column(type="string", length=255, unique=true, nullable=false)
@@ -119,6 +129,23 @@ class User implements UserInterface, \Serializable {
         return $this->id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+
     function getEmail() {
         return $this->email;
     }
@@ -134,6 +161,23 @@ class User implements UserInterface, \Serializable {
     function setId($id) {
         $this->id = $id;
     }
+
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
 
     function setEmail($email) {
         $this->email = $email;

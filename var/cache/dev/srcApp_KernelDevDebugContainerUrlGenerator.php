@@ -32,14 +32,14 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-        'app_admin_gestionuser_index' => [[], ['_controller' => 'App\\Controller\\Admin\\GestionUserController::index'], [], [['text', '/admin/gestion-utilisateurs/']], [], []],
-        'user_show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\GestionUserController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/gestion-utilisateurs/user']], [], []],
-        'user_show_all' => [[], ['_controller' => 'App\\Controller\\Admin\\GestionUserController::showAll'], [], [['text', '/admin/gestion-utilisateurs/user/']], [], []],
         'app_admin_homepage_index' => [[], ['_controller' => 'App\\Controller\\Admin\\HomepageController::index'], [], [['text', '/admin/']], [], []],
+        'app_admin_user_index' => [[], ['_controller' => 'App\\Controller\\Admin\\UserController::index'], [], [['text', '/admin/user/']], [], []],
+        'app_admin_user_showone' => [['id'], ['_controller' => 'App\\Controller\\Admin\\UserController::showOne'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/user']], [], []],
         'app_homepage_index' => [[], ['_controller' => 'App\\Controller\\HomepageController::index'], [], [['text', '/']], [], []],
         'app_member_index' => [[], ['_controller' => 'App\\Controller\\MemberController::index'], [], [['text', '/member/']], [], []],
         'app_registration_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::registerAction'], [], [['text', '/register']], [], []],
         'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
+        'app_security_resetpassword' => [[], ['_controller' => 'App\\Controller\\SecurityController::resetPassword'], [], [['text', '/reset-password']], [], []],
         'logout' => [[], [], [], [['text', '/logout']], [], []],
     ];
         }
